@@ -1,0 +1,35 @@
+# pip install virtualenv --> if 'virtualenv' is not installed already. 
+
+# python -m venv virtualenvProject --> to create a virtual environment specific for this project, 'virtualenvProject' this is the name, it can be anything else.
+
+# pip install flask
+
+# pip install bokeh
+
+# pip install pandas
+
+# pip install pandas_datareader
+
+# # 'Heroku' deployment
+#  - Download Heruku cli (create an account on heroku beforehand)
+#  - login with email and password
+#  -  'heroku create firstflasksite' to create website name ('fir....' will be the name, if not taken already)
+#  - activate virtual environment and if 'gunicorn' is not installed, then 'pip install gunicorn' (this is a http server that heroku needs)
+# - then save the 'pip freeze' command list as a txt file named 'requirements.txt' by running this command - 'pip freeze > requirements.txt'
+# - then create another txt file named 'Procfile' in the same directory where 'templates' 'static' folders are situated, then remove the extension. this will tell heroku which server to use ('web: gunicorn') and address the python file and variable named saved earlier.('website:app'), write inside the 'Proc' file  -->
+# web: gunicorn website:app
+# here "website" is out given python file name, "app" is the variable holding flask instance, inside website.py file.
+
+
+# - then create 'runtime.txt' file and save python version that heroku supports (check that on their website ) : for now it is 'python-3.6.8'
+# - then type 'git init' 
+# - then 'git add .' - here '.' means all the files in the current directory 
+# - then 'git commit -m " " ' - to commit the changes made to the app, " " used to add note like "webpage" added.
+# - then 'heroku git:remote --app 'appname' - to tell heroku which app i am pointing to.
+# - then finally 'git push heroku master'
+# - if the above step doesn't work, add two more before running it :
+# 1. git config --global user.email "iftakher_m@yahoo.com"
+# 2. git config --global user.name "iftakher"
+
+# To open the website from cmd, type 'heroku open'
+# To see info about website, type 'heroku info'

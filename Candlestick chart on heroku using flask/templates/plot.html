@@ -1,0 +1,16 @@
+{% extends "layout.html"%}
+{%block content%}
+<script src="{{cdn_js | safe}}"></script>
+
+<div class="about">
+    <h1>This is the about page</h1>
+    <p>Testing the about page</p>
+    <p>This is added later</p>
+</div>
+
+<!-- 'script1','div1' and 'cdn_js' we need this three to show to bokeh chart in html webpage. -->
+{{script1 | safe}} 
+<!-- 'script1' is from jupyter notebook ==> components(p), similar for div1, and 'cdn_js ' in the script tag above -->
+<!-- and 'script1','div1', 'cdn_js' whatever is on the left of '|'(script1 | safe) is a placeholder actually, and we have to refer it in python file(website.py) while returning the render_template("") -->
+{{div1 | safe}}
+{%endblock%}
